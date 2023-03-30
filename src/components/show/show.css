@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,300&display=swap');
+
+* {
+    background-color: #1c1c1c;
+    color: #fefeff;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    /* display: block; */
+
+}
+
+
+.main {
+    margin-top: 15px;
+}
+
+.cards1 {
+    width: 700px;
+    margin: auto;
+    box-shadow: 0px 1px 8px #E21818;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+
+.container1 {
+    padding: 10px 30px;
+}
+
+.tvShowName {
+    /* border: 2px solid palevioletred; */
+    font-size: 2rem;
+    /* margin-bottom: 10px; */
+    padding-left: 20px;
+    color: #E21818;
+    /* color: aquamarine; */
+}
+
+.tvImages {
+    display: flex;
+    /* padding: 20px; */
+}
+
+.imgs {
+    width: 170px;
+    height: 220px;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 1px 8px #FFDD83;
+    z-index: 1;
+    margin-bottom: 10px;
+
+}
+
+.contents {
+    /* border: 2px solid rgb(41, 50, 223); */
+    /* display: flex; */
+    font-size: 18.5px;
+}
+
+.score {
+    padding-bottom: 5px;
+}
+
+.averageRuntime {
+    padding-bottom: 5px;
+}
+
+.language {
+    padding-bottom: 5px;
+}
+
+.premiered {
+    padding-bottom: 5px;
+}
+
+.rating {
+    padding-bottom: 5px;
+}
+
+.genres {
+    display: flex;
+    gap: 5px;
+    padding-bottom: 5px;
+}
+
+
+.red {
+    color: #FFDD83;
+}
+
+a {
+    color: #A020F0;
+}
+
+.button {
+    display: flex;
+    margin-top: 25px;
+    /* border: 2px solid pink; */
+    /* padding-right: 0; */
+    margin-bottom: 10px;
+}
+
+.read {
+    background: #E21818;
+    color: white;
+    border: 0;
+    font-size: 18.5px;
+    cursor: pointer;
+    border-radius: 3px;
+    /* border: 2px solid blue; */
+    height: 40px;
+    width: 150px;
+    margin: auto;
+}
+
+.read:hover,
+.home:hover {
+    background-color: #1c1c1c;
+    color: #E21818;
+    font-weight: bold;
+    border: 1px solid #E21818;
+}
+
+.home {
+    background: #E21818;
+    color: white;
+    border: 0;
+    font-size: 18.5px;
+    cursor: pointer;
+    border-radius: 3px;
+    /* border: 2px solid blue; */
+    height: 40px;
+    width: 90px;
+    margin-left: auto;
+}
+
+.info {
+    margin-top: 10px;
+    line-height: 25px;
+    /* font-size: 18px; */
+    letter-spacing: .5px;
+}
+
+.head {
+    display: flex;
+    padding: 15px 15px 10px 5px;
+    /* border: 2px solid palevioletred; */
+}
