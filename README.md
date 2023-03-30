@@ -1,4 +1,7 @@
-# Getting Started with Create React App
+# TV SHOWS CARD
+https://darling-arithmetic-ab5b8e.netlify.app/
+
+ Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
