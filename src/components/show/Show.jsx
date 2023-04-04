@@ -27,7 +27,7 @@ function Show() {
   const imageUrl = `${show.image?.original}`
 
   return (
-    <div key = {show.id} >
+    <div key={show.id} >
       <div className="main">
         <div className="cards1">
           <div className="head">
@@ -104,15 +104,15 @@ function Show() {
             </div>
             <div className="bottomContainer">
               <div className="info">
-                The Tv show "{show.name}" aris on "
-                {show.network?.name}" in the
+                The Tv show " {show.name} " aris on "
+                {show.network?.name} " in the
                 {show.network?.country?.name}
-                {show.network?.country?.code} ) and is available in the
+                ({show.network?.country?.code}) {" "} and is available in the
                 {show.network?.country?.timezone} timezone. It has ID of "
-                {show.network?.id}" and has an average runtime of
+                {show.network?.id} " and has an average runtime of
                 {show.runtime} minutes. The show is currently
                 {show.status} and is scheduled to air on
-                {show.schedule?.days} at {show.schedule?.time}.
+                {show.schedule?.days}{" "} at {" "}{show.schedule?.time}.
                 <br />
                 The Status: {show.status}
                 <br />
