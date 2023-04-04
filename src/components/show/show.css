@@ -131,13 +131,13 @@
     /* border: 2px solid palevioletred; */
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     * {
         font-size: 16px;
     }
 
     .main {
-        margin-top: 50px;
+        margin: auto;
     }
 
     .cards1 {
@@ -155,7 +155,7 @@
     }
 
     .main {
-        margin-top: 50px;
+        margin: auto;
     }
 
     .cards1 {

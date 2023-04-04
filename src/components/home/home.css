@@ -97,3 +97,44 @@ title:hover::after {
     font-size: 17px;
     color: #F70776;
 } */
+
+
+@media (max-width: 1024px) {
+    * {
+        font-size: 15px;
+    }
+
+    .container {
+        padding: 20px;
+        border: 2px solid crimson;
+    }
+
+    .showName {
+        font-size: 1.4rem;
+    }
+
+    .images {
+        display: flex;
+    }
+
+    .img {
+        width: 170px;
+        height: 220px;
+    }
+
+    .contents {
+        font-size: 16px;
+    }
+
+    a:hover {
+        color: #F70776;
+        font-size: 15.9px;
+    }
+
+    .read1 {
+        font-size: 16px;
+        height: 25px;
+        width: 90px;
+        margin-left: 110px;
+    }
+}

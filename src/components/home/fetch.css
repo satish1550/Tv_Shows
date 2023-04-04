@@ -15,7 +15,7 @@
         width: 100%;
     }
 }
-@media (max-width: 250px) {
+@media (max-width: 590px) {
     .grid {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
