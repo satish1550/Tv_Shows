@@ -52,7 +52,7 @@ function Show() {
                 className="imgs"
                 alt="ShowImage"
               />
-              <div className="contents">
+              <div className="contents1">
                 {/* <div className="score">
 
                   <span className="red">Score: </span>

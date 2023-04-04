@@ -1,24 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,300&display=swap');
-
-* {
-    background-color: #1c1c1c;
-    color: #fefeff;
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-
-}
-
 .cards {
-    /* display: flex;
-    flex-wrap: nowrap;
-    gap: 20px;
-    overflow-x: auto; */
-    /* margin-bottom: 60px; */
     width: 480px;
-    /* border: 2px solid rgb(41, 50, 223); */
 }
-
 
 .container {
     padding: 30px;
@@ -28,13 +10,12 @@
     font-size: 1.6rem;
     margin-bottom: 10px;
     padding-left: 20px;
-    color: crimson;
-    /* color: aquamarine; */
+    font-weight: bold;
+    color: #000000d9;
 }
 
 .images {
     display: flex;
-    /* padding: 20px; */
 }
 
 .img {
@@ -43,35 +24,18 @@
     object-fit: cover;
     margin-right: 20px;
     border-radius: 5px;
-    box-shadow: 0px 1px 8px rgba(23, 211, 192, 0.478);
+    box-shadow: 0px 1px 8px #FF4C29;
     z-index: 1;
+}
 
+.img:hover {
+    -webkit-animation: scale 4.5s linear;
+    animation: scale .4s linear;
+    animation-fill-mode: forwards;
 }
 
 .contents {
-    /* border: 2px solid rgb(41, 50, 223); */
-    /* display: flex; */
     font-size: 17.5px;
-}
-
-.score {
-    padding-bottom: 5%;
-}
-
-.averageRuntime {
-    padding-bottom: 5%;
-}
-
-.language {
-    padding-bottom: 5%;
-}
-
-.premiered {
-    padding-bottom: 5%;
-}
-
-.rating {
-    padding-bottom: 5%;
 }
 
 .genres {
@@ -85,21 +49,25 @@
 } */
 
 .red {
-    color: #FFA500;
+    color: #FF4C29;
 }
 
 a {
-    color: #673AB7;
+    color: #F70776;
+}
+
+a:hover {
+    color: #F70776;
+    font-size: 16.9px;
 }
 
 .read1 {
-    background: rgba(220, 20, 60, 0.845);
-    color: white;
-    border: 0;
+    background: crimson;
+    color: #E6E6FA;
     font-size: 17.5px;
     cursor: pointer;
+    border: 0;
     border-radius: 3px;
-    /* border: 2px solid blue; */
     height: 30px;
     width: 100px;
     margin-top: 15px;
@@ -107,8 +75,25 @@ a {
 }
 
 .read1:hover {
-    background-color: #1c1c1c;
-    color: rgba(220, 20, 60, 0.84);
+    background-color: white;
+    color: crimson;
     font-weight: bold;
-    border: 1px solid rgba(220, 20, 60, 0.823);
+    border: 1px solid crimson;
 }
+
+
+.score,
+.averageRuntime,
+.language,
+.premiered,
+.rating {
+    padding-bottom: 5%;
+}
+
+/* 
+title:hover::after {
+    content: attr(title);
+    left: 0;
+    font-size: 17px;
+    color: #F70776;
+} */

@@ -22,6 +22,7 @@ export default function Home({ show }) {
                                 src={imageUrl ? imageUrl : defaultPicture}
                                 className="img"
                                 alt="ShowImage"
+                                title={show.show.name}
                             />
                         </Link>
                         <div className="contents">

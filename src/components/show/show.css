@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,300&display=swap');
 
 * {
-    background-color: #1c1c1c;
-    color: #fefeff;
+    /* background-color: #1c1c1c; */
+    color: #000000d9;
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
@@ -29,17 +29,14 @@
 }
 
 .tvShowName {
-    /* border: 2px solid palevioletred; */
     font-size: 2rem;
-    /* margin-bottom: 10px; */
     padding-left: 20px;
-    color: #E21818;
-    /* color: aquamarine; */
+    color: #000000d9;
+    font-weight: bold;
 }
 
 .tvImages {
     display: flex;
-    /* padding: 20px; */
 }
 
 .imgs {
@@ -48,55 +45,39 @@
     object-fit: cover;
     margin-right: 20px;
     border-radius: 5px;
-    box-shadow: 0px 1px 8px #FFDD83;
+    box-shadow: 0px 1px 8px #FF4C29;
     z-index: 1;
     margin-bottom: 10px;
 
 }
 
-.contents {
-    /* border: 2px solid rgb(41, 50, 223); */
-    /* display: flex; */
+.imgs:hover {
+    /* scale: 1.05; */
+    -webkit-animation: scale 4.5s linear;
+    animation: scale .4s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes scale {
+
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+
+    100% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1)
+    }
+}
+
+.contents1 {
     font-size: 18.5px;
-}
-
-.score {
-    padding-bottom: 5px;
-}
-
-.averageRuntime {
-    padding-bottom: 5px;
-}
-
-.language {
-    padding-bottom: 5px;
-}
-
-.premiered {
-    padding-bottom: 5px;
-}
-
-.rating {
-    padding-bottom: 5px;
-}
-
-.genres {
-    display: flex;
-    gap: 5px;
-    padding-bottom: 5px;
-}
-
-
-.red {
-    color: #FFDD83;
-}
-
-a {
-    color: #A020F0;
 }
 
 .button {
     display: flex;
+    justify-content: space-around;
     margin-top: 25px;
     /* border: 2px solid pink; */
     /* padding-right: 0; */
@@ -118,7 +99,7 @@ a {
 
 .read:hover,
 .home:hover {
-    background-color: #1c1c1c;
+    background-color: white;
     color: #E21818;
     font-weight: bold;
     border: 1px solid #E21818;
@@ -148,4 +129,53 @@ a {
     display: flex;
     padding: 15px 15px 10px 5px;
     /* border: 2px solid palevioletred; */
+}
+
+@media (max-width: 768px) {
+    * {
+        font-size: 16px;
+    }
+
+    .main {
+        margin-top: 50px;
+    }
+
+    .cards1 {
+        width: 600px;
+        margin: auto;
+        box-shadow: 0px 1px 8px #E21818;
+        border-radius: 5px;
+        z-index: 1;
+    }
+}
+
+@media (max-width: 590px) {
+    * {
+        font-size: 16px;
+    }
+
+    .main {
+        margin-top: 50px;
+    }
+
+    .cards1 {
+        width: 500px;
+        margin: auto;
+        box-shadow: 0px 1px 8px #E21818;
+        border-radius: 5px;
+        z-index: 1;
+    }
+
+    .read {
+        font-size: 16px;
+        height: 30px;
+        width: 130px;
+    }
+
+    .home {
+        font-size: 16px;
+        cursor: pointer;
+        height: 30px;
+        width: 80px;
+    }
 }
