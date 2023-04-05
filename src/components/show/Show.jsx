@@ -4,9 +4,14 @@ import defaultPicture from '../default-movie.jpg'
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
+// import Prev from "../Prev"
+// import Next from "../Next"
 
 function Show() {
   const { id } = useParams();
+  // const { prevId } = useParams();
+  // const { selfId } = useParams();
+  // const { nextId } = useParams();
   const [show, setShow] = useState({});
 
   useEffect(() => {
@@ -104,7 +109,7 @@ function Show() {
             </div>
             <div className="bottomContainer">
               <div className="info">
-                The Tv show " {show.name} " aris on "
+                The Tv show "{show.name} "aris on"
                 {show.network?.name} " in the
                 {show.network?.country?.name}
                 ({show.network?.country?.code}) {" "} and is available in the
@@ -129,28 +134,38 @@ function Show() {
                 <br />
                 Click <a href={`${show.url}`}> here </a> to continue
                 <br />
-                <div className="button">
-                  <button
-                    className="read"
-                    href={`${show._links?.previousepisode?.href}`}
-                    target="_blank"
-                  >
-                    Previous Episode
-                  </button>
-                  <button
-                    className="read"
-                    href={`${show._links?.self?.href}`}
-                    target="_blank"
-                  >
-                    Self
-                  </button>
-                  <button
-                    className="read"
-                    href={`${show._links?.nextepisode?.href}`}
-                    target="_blank"
-                  >
-                    Next Episode
-                  </button>
+                <div className="button red">
+
+                  <Link to={`${show._links?.previousepisode?.href}`} >
+                    <button className="home">Prev</button>
+                  </Link>
+
+                  <Link to={`${show._links?.self?.href}`} >
+                    <button className="home">Self</button>
+                  </Link>
+
+                  <Link to={`${show._links?.nextepisode?.href}`} >
+                    <button className="home">Next</button>
+                  </Link>
+                  {/* <Link to= "/prev" > {<Prev />}
+                    <button className="home">Prev</button>
+                  </Link>
+                
+                  <Link to={`/card/${show._links?.self?.href}`} >
+                    <button className="home">Self</button>
+                  </Link>
+
+                  <Link to= "/next" > {<Next />}
+                    <button className="home">Next</button>
+                  </Link> */}
+
+
+                  <br />
+                  {show._links?.nextepisode?.href}
+                  <br />
+                  {show._links?.self?.href}
+                  <br />
+                  {`${show._links?.previousepisode?.href}`}
                 </div>
               </div>
             </div>
