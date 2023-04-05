@@ -160,12 +160,12 @@ function Show() {
                   </Link> */}
 
 
-                  <br />
+                  {/* <br />
                   {show._links?.nextepisode?.href}
                   <br />
                   {show._links?.self?.href}
                   <br />
-                  {`${show._links?.previousepisode?.href}`}
+                  {`${show._links?.previousepisode?.href}`} */}
                 </div>
               </div>
             </div>
