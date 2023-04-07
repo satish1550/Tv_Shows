@@ -12,6 +12,8 @@ function Show() {
   const [show, setShow] = useState({});
   const [nextShow, setNextShow] = useState({})
   const [prevShow, setPrevShow] = useState({})
+  const prevHref = show?._links?.previousepisode?.href
+  const nextFref = show?._links?.nextepisode?.href
   useEffect(() => {
     axios
       .get(`https://api.tvmaze.com/shows/${id}`)
@@ -20,22 +22,27 @@ function Show() {
       });
   }, [id]);
   useEffect(() => {
-    axios.get(show._links?.previousepisode?.href)
+    axios.get(prevHref)
       .then((data) => {
-        setPrevShow(data.data)
-      }).catch((err) => {
+        setPrevShow(data.data);
+      })
+      .catch((err) => {
         console.log("something wrong bro", err.message)
       })
-  }, [show])
+  }, [prevHref])
   useEffect(() => {
-    axios.get(show._links?.nextepisode?.href)
+    axios.get(nextFref)
       .then((data) => {
-        setNextShow(data.data)
-      }).catch((err) => {
+        setNextShow(data.data);
+      })
+      .catch((err) => {
         console.log("something wrong bro", err.message)
       })
-  }, [show])
+  }, [nextFref])
 
+  // const prev = prevShow?.id
+  const next = nextShow?.id
+  console.log(prevShow)
   const category = show?.genres
   const rating = show.rating?.average
   const premiered = show.premiered
@@ -68,11 +75,6 @@ function Show() {
                 alt="ShowImage"
               />
               <div className="contents1">
-                {/* <div className="score">
-
-                  <span className="red">Score: </span>
-                  {show?.score}
-                </div> */}
                 <div className="averageRuntime">
                   <span className="red">Average Runtime: </span>
                   {show.averageRuntime}mins.
@@ -146,15 +148,15 @@ function Show() {
                 <br />
                 <div className="button red">
 
-                  <Link to={`/card/${prevShow.id}`}>
+                  <Link to={'/card/2489322'}>
                     <button className="home1">Prev Episode</button>
                   </Link>
 
-                  <Link to={`${show.id}`} >
+                  <Link to={`/card/${show.id}`} >
                     <button className="home1">Self</button>
                   </Link>
 
-                  <Link to={`/card/${nextShow.id}`} >
+                  <Link to={`/card/${next}`} >
                     <button className="home1">Next Episode</button>
                   </Link>
                 </div>

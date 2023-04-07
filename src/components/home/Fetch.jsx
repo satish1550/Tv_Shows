@@ -13,7 +13,6 @@ export default function Fetch() {
                 setShows(data.data);
             })
     }, []);
-    console.log(shows)
     return (
         <div className='grid'>
             {shows.map((card) => (
