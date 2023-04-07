@@ -9,22 +9,32 @@ import { Link } from "react-router-dom";
 
 function Show() {
   const { id } = useParams();
-  // const { prevId } = useParams();
-  // const { selfId } = useParams();
-  // const { nextId } = useParams();
   const [show, setShow] = useState({});
-
+  const [nextShow, setNextShow] = useState({})
+  const [prevShow, setPrevShow] = useState({})
   useEffect(() => {
     axios
       .get(`https://api.tvmaze.com/shows/${id}`)
-      // .get(`"https://api.tvmaze.com/search/shows?/${id}`)
       .then((data) => {
         setShow(data.data);
-      })
+      });
   }, [id]);
-  console.log(show)
-  // console.log(show?.genres[0])
-  console.log(show.image?.original)
+  useEffect(() => {
+    axios.get(show._links?.previousepisode?.href)
+      .then((data) => {
+        setPrevShow(data.data)
+      }).catch((err) => {
+        console.log("something wrong bro", err.message)
+      })
+  }, [show])
+  useEffect(() => {
+    axios.get(show._links?.nextepisode?.href)
+      .then((data) => {
+        setNextShow(data.data)
+      }).catch((err) => {
+        console.log("something wrong bro", err.message)
+      })
+  }, [show])
 
   const category = show?.genres
   const rating = show.rating?.average
@@ -136,7 +146,7 @@ function Show() {
                 <br />
                 <div className="button red">
 
-                  <Link to={`${show._links?.previousepisode?.href}`} >
+                  <Link to={`/card/${prevShow.id}`}>
                     <button className="home">Prev</button>
                   </Link>
 
@@ -144,37 +154,15 @@ function Show() {
                     <button className="home">Self</button>
                   </Link>
 
-                  <Link to={`${show._links?.nextepisode?.href}`} >
+                  <Link to={`/card/${nextShow.id}`} >
                     <button className="home">Next</button>
                   </Link>
-                  {/* <Link to= "/prev" > {<Prev />}
-                    <button className="home">Prev</button>
-                  </Link>
-                
-                  <Link to={`/card/${show._links?.self?.href}`} >
-                    <button className="home">Self</button>
-                  </Link>
-
-                  <Link to= "/next" > {<Next />}
-                    <button className="home">Next</button>
-                  </Link> */}
-
-
-                  {/* <br />
-                  {show._links?.nextepisode?.href}
-                  <br />
-                  {show._links?.self?.href}
-                  <br />
-                  {`${show._links?.previousepisode?.href}`} */}
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      {/* <h1>{name}</h1>
-      <p>{summary}</p>
-      <button onClick={handleBookTicket}>Book Ticket</button> */}
     </div>
   );
 }

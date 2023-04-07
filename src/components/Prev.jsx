@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
 import defaultPicture from './default-movie.jpg'
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
 function Prev() {
     const { prevId } = useParams();
     const [show, setShow] = useState({});
-
+    const location = useLocation();
+    const { href } = location.state
+    console.log("href",href)
     useEffect(() => {
         axios
-            .get(`https://api.tvmaze.com/episodes/${prevId}`)
+            .get(location.data)
             // .get(`"https://api.tvmaze.com/search/shows?/${id}`)
             .then((data) => {
                 setShow(data.data);

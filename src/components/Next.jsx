@@ -15,9 +15,9 @@ function Next() {
                 setShow(data.data);
             })
     }, [nextId]);
-    console.log(show)
+    // console.log(show)
     // console.log(show?.genres[0])
-    console.log(show.image?.original)
+    // console.log(show.image?.original)
 
     const category = show?.genres
     const rating = show.rating?.average
