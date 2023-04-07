@@ -84,20 +84,19 @@
     margin-bottom: 10px;
 }
 
-.read {
+.home1 {
     background: #E21818;
     color: white;
     border: 0;
     font-size: 18.5px;
     cursor: pointer;
-    border-radius: 3px;
-    /* border: 2px solid blue; */
+    border-radius: 4px;
     height: 40px;
     width: 150px;
     margin: auto;
 }
 
-.read:hover,
+.home1:hover,
 .home:hover {
     background-color: white;
     color: #E21818;
@@ -166,7 +165,7 @@
         z-index: 1;
     }
 
-    .read {
+    .home1 {
         font-size: 16px;
         height: 30px;
         width: 130px;

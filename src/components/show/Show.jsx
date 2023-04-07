@@ -147,15 +147,15 @@ function Show() {
                 <div className="button red">
 
                   <Link to={`/card/${prevShow.id}`}>
-                    <button className="home">Prev</button>
+                    <button className="home1">Prev Episode</button>
                   </Link>
 
                   <Link to={`${show.id}`} >
-                    <button className="home">Self</button>
+                    <button className="home1">Self</button>
                   </Link>
 
                   <Link to={`/card/${nextShow.id}`} >
-                    <button className="home">Next</button>
+                    <button className="home1">Next Episode</button>
                   </Link>
                 </div>
               </div>
