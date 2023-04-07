@@ -150,7 +150,7 @@ function Show() {
                     <button className="home">Prev</button>
                   </Link>
 
-                  <Link to={`${show._links?.self?.href}`} >
+                  <Link to={`cards/${show.id}`} >
                     <button className="home">Self</button>
                   </Link>
 
