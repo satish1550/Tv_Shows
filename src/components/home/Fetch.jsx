@@ -16,7 +16,7 @@ export default function Fetch() {
     return (
         <div className='grid'>
             {shows.map((card) => (
-                <Home key={card.show?.id} show={card} />
+                <Home key={card.show?.id} show={card} dangerouslySetInnerHTML={{ __html: card }} />
             ))}
         </div>
     )
