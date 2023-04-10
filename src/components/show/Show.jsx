@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./show.css";
-import defaultPicture from '../default-movie.jpg'
+import defaultPicture from '../images/default.jpg'
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -10,17 +10,43 @@ import { Link } from "react-router-dom";
 function Show() {
   const { id } = useParams();
   const [show, setShow] = useState({});
-  const [nextShow, setNextShow] = useState({})
-  const [prevShow, setPrevShow] = useState({})
+  const [nextShow, setNextShow] = useState(false)
+  const [prevShow, setPrevShow] = useState(false)
   const prevHref = show?._links?.previousepisode?.href
   const nextFref = show?._links?.nextepisode?.href
+
+
+  const PrevRender = () => {
+    setPrevShow(true)
+    setNextShow(false)
+
+  }
+
+  const NextRender = () => {
+    setNextShow(true)
+    setPrevShow(false)
+  }
+
+
   useEffect(() => {
-    axios
-      .get(`https://api.tvmaze.com/shows/${id}`)
-      .then((data) => {
-        setShow(data.data);
-      });
-  }, [id]);
+    if (nextShow === true || prevShow === true) {
+      axios
+        .get(`https://api.tvmaze.com/episodes/${id}`)
+        .then((data) => {
+          setShow(data.data);
+        });
+      console.log("prev")
+    }
+    else {
+      axios
+        .get(`https://api.tvmaze.com/shows/${id}`)
+        .then((data) => {
+          setShow(data.data);
+        });
+    }
+  }, [id, nextShow, prevShow]);
+
+
   useEffect(() => {
     axios.get(prevHref)
       .then((data) => {
@@ -40,13 +66,13 @@ function Show() {
       })
   }, [nextFref])
 
-  // const prev = prevShow?.id
+  const prev = prevShow?.id
   const next = nextShow?.id
   console.log(prevShow)
   const category = show?.genres
   const rating = show.rating?.average
   const premiered = show.premiered
-  const imageUrl = `${show.image?.original}`
+  const imageUrl = null
 
   return (
     <div key={show.id} >
@@ -67,8 +93,8 @@ function Show() {
                 // Render={Render}
                 src={
                   imageUrl
-                    ? imageUrl
-                    : defaultPicture
+                    ? defaultPicture
+                    : show.image?.original
                 }
                 // src= required"./default-movie.png"
                 className="imgs"
@@ -148,17 +174,25 @@ function Show() {
                 <br />
                 <div className="button red">
 
-                  <Link to={'/card/2489322'}>
-                    <button className="home1">Prev Episode</button>
-                  </Link>
+                  {
+                    prevHref ?
+                      <Link to={`/card/${prev}`} >
+                        <button className="home1" onClick={PrevRender}>Prev Episode</button>
+                      </Link> :
+                      ""
+                  }
 
                   <Link to={`/card/${show.id}`} >
                     <button className="home1">Self</button>
                   </Link>
 
-                  <Link to={`/card/${next}`} >
-                    <button className="home1">Next Episode</button>
-                  </Link>
+                  {
+                    nextFref ?
+                      <Link to={`/card/${next}`} >
+                        <button className="home1" onClick={NextRender}>Next Episode</button>
+                      </Link> :
+                      ""
+                  }
                 </div>
               </div>
             </div>

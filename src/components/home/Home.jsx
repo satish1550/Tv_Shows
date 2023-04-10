@@ -1,6 +1,6 @@
 import React from "react";
 import './home.css'
-import defaultPicture from '../default-movie.jpg'
+import defaultPicture from '../images/default.jpg'
 import { Link } from "react-router-dom";
 
 export default function Home({ show }) {
@@ -8,7 +8,7 @@ export default function Home({ show }) {
     const category = show.show.genres[1]
     const rating = show.show.rating?.average
     const premiered = show.show.premiered
-    const imageUrl = `${show.show?.image?.original}`
+    const imageUrl = null
 
     return (
         <div>
@@ -16,10 +16,9 @@ export default function Home({ show }) {
                 <div className="container">
                     <div className="showName">{show.show.name}</div>
                     <div className="images">
-                        <Link to={`/card/${show.show.id}`}>
+                        <Link to={`/card/${show.show.id}`} state={{ nextEpisode: false, prevEpisode: false }}>
                             <img
-                                // Render={Render}
-                                src={imageUrl ? imageUrl : defaultPicture}
+                                src={imageUrl ? defaultPicture : show.show?.image?.original}
                                 className="img"
                                 alt="ShowImage"
                                 title={show.show.name}
@@ -49,7 +48,7 @@ export default function Home({ show }) {
                                     more info
                                 </a>
                             </div>
-                            <Link to={`/card/${show.show.id}`}>
+                            <Link to={`/card/${show.show.id}`} state={{ nextEpisode: false, prevEpisode: false }}>
                                 <button className="read1">Read More</button>
                             </Link>
                         </div>
