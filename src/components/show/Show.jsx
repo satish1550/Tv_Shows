@@ -147,12 +147,12 @@ function Show() {
             </div>
             <div className="bottomContainer">
               <div className="info">
-                The Tv show "{show.name} "aris on"
-                {show.network?.name} " in the
+                The Tv show "{show.name} "aris on
+                {show.network?.name} in the
                 {show.network?.country?.name}
                 ({show.network?.country?.code}) {" "} and is available in the
-                {show.network?.country?.timezone} timezone. It has ID of "
-                {show.network?.id} " and has an average runtime of
+                {show.network?.country?.timezone} timezone. It has ID of
+                {show.network?.id} and has an average runtime of
                 {show.runtime} minutes. The show is currently
                 {show.status} and is scheduled to air on
                 {show.schedule?.days}{" "} at {" "}{show.schedule?.time}.
@@ -165,12 +165,12 @@ function Show() {
                 <br />
                 latest updated: {show.updated}
                 <br />
-                For more information about the
-                <a href={`${show.officialSite}`}>show</a> and
-                <a href={`${show.network?.officialSite}`}>network</a>,
+                For more information about the{" "}
+                <a href={`${show.officialSite}`}>show</a>{" "}and{" "}
+                <a href={`${show.network?.officialSite}`}>network</a>{" "},
                 please refer to their respective sources.
                 <br />
-                Click <a href={`${show.url}`}> here </a> to continue
+                Click{" "}<a href={`${show.url}`}>here</a>{" "}to continue
                 <br />
                 <div className="button red">
 
