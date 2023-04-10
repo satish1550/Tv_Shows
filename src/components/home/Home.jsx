@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 
 export default function Home({ show }) {
 
-    const category = show.show.genres[1]
-    const rating = show.show.rating?.average
-    const premiered = show.show.premiered
-    const imageUrl = null
+    const category = show.show?.genres[1]
+    const rating = show.show?.rating?.average
+    const premiered = show.show?.premiered
+    const imageUrl = show.show?.image?.original
 
     return (
         <div>
@@ -18,7 +18,7 @@ export default function Home({ show }) {
                     <div className="images">
                         <Link to={`/card/${show.show.id}`} state={{ nextEpisode: false, prevEpisode: false }}>
                             <img
-                                src={imageUrl ? defaultPicture : show.show?.image?.original}
+                                src={imageUrl ? imageUrl : defaultPicture}
                                 className="img"
                                 alt="ShowImage"
                                 title={show.show.name}

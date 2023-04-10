@@ -72,7 +72,7 @@ function Show() {
   const category = show?.genres
   const rating = show.rating?.average
   const premiered = show.premiered
-  const imageUrl = null
+  const imageUrl = show?.image?.original
 
   return (
     <div key={show.id} >
@@ -91,11 +91,7 @@ function Show() {
             <div className="tvImages">
               <img
                 // Render={Render}
-                src={
-                  imageUrl
-                    ? defaultPicture
-                    : show.image?.original
-                }
+                src={imageUrl ? imageUrl : defaultPicture}
                 // src= required"./default-movie.png"
                 className="imgs"
                 alt="ShowImage"
