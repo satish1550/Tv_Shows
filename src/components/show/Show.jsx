@@ -147,7 +147,7 @@ function Show() {
             </div>
             <div className="bottomContainer">
               <div className="info">
-                The Tv show "{show.name}"aris on
+                The Tv show "{show.name}"{" "}aris on
                 {show.network?.name} in the
                 {show.network?.country?.name}
                 ({show.network?.country?.code}) {" "} and is available in the
