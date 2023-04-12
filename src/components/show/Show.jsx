@@ -35,7 +35,7 @@ function Show() {
         .then((data) => {
           setShow(data.data);
         });
-      console.log("prev")
+      // console.log("prev")
     }
     else {
       axios
@@ -53,7 +53,7 @@ function Show() {
         setPrevShow(data.data);
       })
       .catch((err) => {
-        console.log("something wrong bro", err.message)
+        // console.log("something wrong bro", err.message)
       })
   }, [prevHref])
   useEffect(() => {
@@ -62,14 +62,19 @@ function Show() {
         setNextShow(data.data);
       })
       .catch((err) => {
-        console.log("something wrong bro", err.message)
+        // console.log("something wrong bro", err.message)
       })
   }, [nextFref])
 
   const prev = prevShow?.id
   const next = nextShow?.id
-  console.log(prevShow)
-  const category = show?.genres
+  // console.log(prevShow)
+  // const category = show?.genres
+  console.log(show)
+  console.log(show.genres)
+
+
+  let category = show?.genres?.[1];
   const rating = show.rating?.average
   const premiered = show.premiered
   const imageUrl = show?.image?.original
@@ -102,10 +107,8 @@ function Show() {
                   {show.averageRuntime}mins.
                 </div>
                 <div className="genres">
-                  <span>
-                    <span className="red">Category: </span>
-                  </span>
-                  <div className="genres1">{show?.genres}</div>
+                  <span><span className="red">Category: </span></span>
+                  <div className="genres1">{show?.genres?.[0]}</div>
                   <span>{category ? "/" : ""}</span>
                   <div className="genres2">{category}</div>
                 </div>
