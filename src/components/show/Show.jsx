@@ -68,8 +68,6 @@ function Show() {
 
   const prev = prevShow?.id
   const next = nextShow?.id
-  // console.log(prevShow)
-  // const category = show?.genres
   console.log(show)
   console.log(show.genres)
 
